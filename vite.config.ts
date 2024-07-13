@@ -17,7 +17,6 @@ import UnoCSS from 'unocss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 
 import { viteMockServe } from 'vite-plugin-mock'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -34,7 +33,6 @@ export default defineConfig({
     // }),
     UnoCSS(),
     AutoImport({
-      resolvers: [ElementPlusResolver()],
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
         /\.vue$/,
@@ -54,7 +52,6 @@ export default defineConfig({
     Components({
       directoryAsNamespace: true,
       collapseSamePrefixes: true,
-      resolvers: [ElementPlusResolver()]
     }),
     Layouts({
       layoutsDirs: 'src/layouts',
